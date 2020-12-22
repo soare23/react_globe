@@ -51,6 +51,7 @@ function App() {
   return (
     <div className="App">
       <div className="main-container">
+        <Globe markers={markers}></Globe>
         <div className="form-container">
           <form onSubmit={handleSubmit}>
             <input
@@ -68,7 +69,6 @@ function App() {
           </form>
         </div>
         {country ? <CountryDetails country={country}></CountryDetails> : ''}
-        <Globe markers={markers}></Globe>
         <BackToTopArrow></BackToTopArrow>
       </div>
     </div>
