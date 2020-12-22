@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* margin: 0; */
+  background-color: #457b9d;
+  /* color: #f1faee; */
+}
+
+.main-container {
+  max-width: 100%;
+}
+
+.form-container {
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.form-container button {
+  margin-left: 10px;
+}
+
+.globe-container {
+  display: flex;
+  justify-content: center;
+  width: 900px !important;
+  height: 800px;
+  max-width: 100%;
+}
+
+.details-container {
+  justify-content: center;
+}
+
+.details-container img {
+  width: 150px;
+  max-width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.general-details-split {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.sub-containers {
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  text-align: center;
+}
+
+.scrollTop {
+  position: fixed;
+  width: 100%;
+  bottom: 20px;
+  align-items: center;
+  height: 20px;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+  animation: fadeIn 0.3s;
+  transition: opacity 0.4s;
+  opacity: 0.5;
+}
+
+.scrollTop:hover {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
