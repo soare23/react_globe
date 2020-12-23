@@ -34,6 +34,14 @@
   max-width: 100%;
 }
 
+.globe-container-small {
+  display: flex;
+  justify-content: center;
+  width: 800px !important;
+  height: 450px;
+  max-width: 100%;
+}
+
 .details-container {
   justify-content: center;
 }
