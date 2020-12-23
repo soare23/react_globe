@@ -8,6 +8,7 @@ const memoizedComponent = React.memo(function Globe({ markers }) {
   let animation = [];
   let options = {};
   let goToCoordinates = markers.markers[0].coordinates;
+  let responsiveClass;
 
   if (goToCoordinates[0] === 0 && goToCoordinates[1] === 0) {
     animation = [
@@ -31,16 +32,18 @@ const memoizedComponent = React.memo(function Globe({ markers }) {
     options = {
       enableCameraZoom: false,
     };
+    responsiveClass = 'globe-container-small';
   } else {
     options = {
       enableCameraZoom: true,
     };
+    responsiveClass = 'globe-container';
   }
 
   return (
     <>
       <div className="main-container">
-        <div className="globe-container">
+        <div className={responsiveClass}>
           <ReactGlobe
             markers={markers.markers}
             animations={animation}
