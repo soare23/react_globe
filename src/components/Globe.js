@@ -2,8 +2,9 @@ import React from 'react';
 import ReactGlobe from 'react-globe';
 import 'tippy.js/dist/tippy.css';
 import 'tippy.js/animations/scale.css';
+import { memo } from 'react';
 
-function Globe({ markers }) {
+const memoizedComponent = React.memo(function Globe({ markers }) {
   let animation = [];
   let options = {};
   let goToCoordinates = markers.markers[0].coordinates;
@@ -50,6 +51,6 @@ function Globe({ markers }) {
       </div>
     </>
   );
-}
+});
 
-export default Globe;
+export default memoizedComponent;
