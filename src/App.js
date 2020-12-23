@@ -9,6 +9,7 @@ function App() {
   const [userInput, setUserInput] = useState();
   const [country, setCountry] = useState();
   const [markers, setMarkers] = useState({ markers: [] });
+  console.log(markers);
 
   function handleChange(e) {
     setUserInput(e.target.value);
