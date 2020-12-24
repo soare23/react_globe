@@ -2,7 +2,6 @@ import React from 'react';
 import ReactGlobe from 'react-globe';
 import 'tippy.js/dist/tippy.css';
 import 'tippy.js/animations/scale.css';
-import { memo } from 'react';
 
 const memoizedComponent = React.memo(function Globe({ markers }) {
   let animation = [];
