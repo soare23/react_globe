@@ -9,7 +9,7 @@ function App() {
   const [userInput, setUserInput] = useState();
   const [country, setCountry] = useState();
   const [markers, setMarkers] = useState({ markers: [] });
-  console.log(markers);
+  let errorAlert = document.getElementById('error-alert');
 
   function handleChange(e) {
     setUserInput(e.target.value);
@@ -22,6 +22,12 @@ function App() {
       .then((data) => {
         setCountry(data[0]);
         addNewMarker(data[0]);
+        errorAlert.style.visibility = 'hidden';
+      })
+      .catch((err) => {
+        if (err) {
+          noCountriesFoundError();
+        }
       });
   }
 
@@ -49,6 +55,10 @@ function App() {
     });
   }
 
+  function noCountriesFoundError() {
+    errorAlert.style.visibility = 'visible';
+  }
+
   return (
     <div className="App">
       <div className="main-container">
@@ -58,18 +68,21 @@ function App() {
             <input
               className="form-control mr-sm-2"
               type="search"
-              placeholder="Enter country name or code"
+              placeholder="Enter country name"
               aria-label="Search"
               name="country"
               value={userInput}
               onChange={handleChange}
             />
-            <Button className="btn btn-sm btn-outline-secondary" type="submit">
-              Search
+            <Button className="btn btn-sm btn-primary" type="submit">
+              SEARCH
             </Button>
           </form>
         </div>
         {country ? <CountryDetails country={country}></CountryDetails> : ''}
+        <div className="error-container" id="error-alert">
+          <p>There are no countries with that name. Please try again.</p>
+        </div>
         <BackToTopArrow></BackToTopArrow>
       </div>
     </div>
