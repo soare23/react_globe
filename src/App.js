@@ -21,6 +21,7 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         setCountry(data[0]);
+        console.log(data[0]);
         addNewMarker(data[0]);
         errorAlert.style.visibility = 'hidden';
       })
